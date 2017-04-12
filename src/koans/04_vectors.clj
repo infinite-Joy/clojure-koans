@@ -18,16 +18,16 @@
   (= [111 222 333] (conj [111 222] 333))
 
   "You can get the first element of a vector like so"
-  (= __ (first [:peanut :butter :and :jelly]))
+  (= :peanut (first [:peanut :butter :and :jelly]))
 
   "And the last in a similar fashion"
-  (= __ (last [:peanut :butter :and :jelly]))
+  (= :jelly (last [:peanut :butter :and :jelly]))
 
   "Or any index if you wish"
-  (= __ (nth [:peanut :butter :and :jelly] 3))
+  (= :jelly (nth [:peanut :butter :and :jelly] 3))
 
   "You can also slice a vector"
-  (= __ (subvec [:peanut :butter :and :jelly] 1 3))
+  (= [:butter :and] (subvec [:peanut :butter :and :jelly] 1 3))
 
   "Equality with collections is in terms of values"
-  (= (list 1 2 3) (vector 1 2 __)))
+  (= (list 1 2 3) (vector 1 2 3)))
