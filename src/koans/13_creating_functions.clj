@@ -24,12 +24,12 @@
 
   "Functions can join forces as one 'composed' function"
   (= 25 (let [inc-and-square (comp square inc)]
-          (inc-and-square __)))
+          (inc-and-square 4)))
 
   "Have a go on a double dec-er"
-  (= __ (let [double-dec (comp dec dec)]
+  (= 8 (let [double-dec (comp dec dec)]
           (double-dec 10)))
 
   "Be careful about the order in which you mix your functions"
-  (= 99 (let [square-and-dec ___]
+  (= 99 (let [square-and-dec (comp dec square)]
           (square-and-dec 10))))
