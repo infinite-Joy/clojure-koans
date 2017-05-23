@@ -10,14 +10,19 @@
   (loop [n   n
          acc true]
     (if (= n 0)
-      true
+      acc
       (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  __)
+  (loop [[r & more :as all] (seq coll)
+         acc '()]
+    (if all
+      (recur more (cons r acc))
+      acc)))
 
 (defn factorial [n]
-  __)
+  (take n
+          (map first (iterate (fn [[a b]][b (+ a b)])[0 1]))))
 
 (meditations
   "Recursion ends with a base case"
